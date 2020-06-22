@@ -1,0 +1,27 @@
+{
+  "name": "gir-learing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "browser-sync": "^2.26.7"
+  },
+  "devDependencies": {
+    "-": "0.0.1",
+    "html-validate": "^3.0.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Danello92/nauka-gita.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Danello92/nauka-gita/issues"
+  },
+  "homepage": "https://github.com/Danello92/nauka-gita#readme"
+}
