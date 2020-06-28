@@ -27,8 +27,8 @@ body {
   text-align: center;
 }
 
-#buttons {
-  background-color: yellowgreen;
+#messages {
+  background-color: lightgreen;
   width: 150px;
   height: 120px;
 }
