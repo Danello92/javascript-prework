@@ -63,6 +63,6 @@ if( computerMove == 'kamień' && playerMove == 'papier'){
   }if( playerMove == 'nieznany ruch'){
     printMessage('nie dozwolony ruch');
   }
-  if( computerMove = playerMove ){
+  if( computerMove == playerMove ){
     printMessage('remis');
   }
