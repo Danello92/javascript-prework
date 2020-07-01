@@ -1,5 +1,6 @@
 	
 function getMoveName(argMoveId){
+  // okreslanie co zostało wybrane przez gracza jak i komputer
   if(argMoveId == 1){
     return 'kamień';
   }
@@ -10,11 +11,13 @@ function getMoveName(argMoveId){
     return 'nożyce';
   }
   else {
+  // nieznany ruch dla gry
     printMessage('Nie znam ruchu' + argMoveId + '.');
     return 'nieznany ruch';
   }
 }
 function displayResult(argComputerMove, argPlayerMove){
+  // zasady gry co zrobil kazdy z graczy
   if( argComputerMove == 'kamień' && argPlayerMove == 'papier'){
     printMessage('Ty wygrywasz!');
   }
@@ -32,17 +35,20 @@ function displayResult(argComputerMove, argPlayerMove){
   }
   if( argComputerMove == 'papier' && argPlayerMove == 'kamień'){
     printMessage('Ty przegrywasz!');
+    // nie moznosc wykonania zasady error kodu
   }if( argPlayerMove == 'nieznany ruch'){
     printMessage('nie dozwolony ruch');
   }
+  // mozliwosc remisu
   if( argComputerMove == argPlayerMove ){
     printMessage('remis');
   }
 }
+// losowanie zmieniej
 let randomNumber = Math.floor(Math.random() * 3 + 1);
-
+// console log dla liczby losowej
 console.log('Wylosowana liczba to: ' + randomNumber);
-
+// nadanie zmienej i przekazywanie jej do funkcji
 let computerMove = getMoveName(randomNumber);
 /*
 if(randomNumber == 1){
@@ -64,7 +70,7 @@ printMessage('Komputera ruch to: ' + computerMove);
 let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
 
 console.log('Gracz wpisał: ' + playerInput);
-
+// nadanie zmienej gracza i przekazanie jej do funkcji okreslajacej co wpisal gracz
 let playerMove = getMoveName(playerInput);
 /*
 if(playerInput == 1)  
@@ -82,5 +88,8 @@ else if(playerInput == 3)
     playerMove = 'nieznany ruch';
 }
 */
+
 printMessage('Twój ruch to: ' + playerMove);
+// okreslenie zmienej dla funckji
 let result = displayResult(computerMove,playerMove);
+// dlaczego wyswietla mi sie wynik jezeli tylko okreslilem zmiena
