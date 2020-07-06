@@ -23,9 +23,9 @@ pButton.addEventListener('click', buttonClickedPaper);
 rButton.addEventListener('click', buttonClickedRock);
 sButton.addEventListener('click', buttonClickedScissors);
 
-function playGame(playerInput) {
+const playGame = function(playerInput) {
 
-   const clearMessages = function(){
+    function clearMessages(){
     document.getElementById('messages').innerHTML = '';
   }
    const getMoveName = function (argMoveId) {
@@ -73,7 +73,7 @@ function playGame(playerInput) {
       printMessage('remis');
     }
   }
-  clearMessages;
+  clearMessages();
   // losowanie zmieniej
   let randomNumber = Math.floor(Math.random() * 3 + 1);
   // console log dla liczby losowej
