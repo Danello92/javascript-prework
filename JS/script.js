@@ -1,32 +1,34 @@
 
-let pButton = document.getElementById('play-paper');
-let rButton = document.getElementById('play-rock');
-let sButton = document.getElementById('play-scissors');
 
 
-function buttonClickedPaper(){
+ const buttonClickedPaper = function(){
   let playerInput = 2;
   playGame(playerInput);
       
 }
-function buttonClickedRock(){
+const buttonClickedRock = function(){
   let playerInput = 1;
   playGame(playerInput);
 }
-function buttonClickedScissors(){
+const buttonClickedScissors = function (){
   let playerInput = 3;
   playGame(playerInput);
 }
+
+let pButton = document.getElementById('play-paper');
+let rButton = document.getElementById('play-rock');
+let sButton = document.getElementById('play-scissors');  
+
 pButton.addEventListener('click', buttonClickedPaper);
 rButton.addEventListener('click', buttonClickedRock);
 sButton.addEventListener('click', buttonClickedScissors);
 
 function playGame(playerInput) {
 
-  function clearMessages(){
+   const clearMessages = function(){
     document.getElementById('messages').innerHTML = '';
   }
-  function getMoveName(argMoveId) {
+   const getMoveName = function (argMoveId) {
     // okreslanie co zostało wybrane przez gracza jak i komputer
     if (argMoveId == 1) {
       return 'kamień';
@@ -71,7 +73,7 @@ function playGame(playerInput) {
       printMessage('remis');
     }
   }
-  clearMessages();
+  clearMessages;
   // losowanie zmieniej
   let randomNumber = Math.floor(Math.random() * 3 + 1);
   // console log dla liczby losowej
