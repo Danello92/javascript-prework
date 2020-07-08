@@ -10,14 +10,14 @@ const buttonClickedRock = function(){
   let playerInput = 1;
   playGame(playerInput);
 }
-const buttonClickedScissors = function (){
+const buttonClickedScissors = function(){
   let playerInput = 3;
   playGame(playerInput);
 }
 
-let pButton = document.getElementById('play-paper');
-let rButton = document.getElementById('play-rock');
-let sButton = document.getElementById('play-scissors');  
+const pButton = document.getElementById('play-paper');
+const rButton = document.getElementById('play-rock');
+const sButton = document.getElementById('play-scissors');  
 
 pButton.addEventListener('click', buttonClickedPaper);
 rButton.addEventListener('click', buttonClickedRock);
@@ -25,7 +25,7 @@ sButton.addEventListener('click', buttonClickedScissors);
 
 const playGame = function(playerInput) {
 
-    function clearMessages(){
+    const clearMessages = function(){
     document.getElementById('messages').innerHTML = '';
   }
    const getMoveName = function (argMoveId) {
@@ -45,7 +45,7 @@ const playGame = function(playerInput) {
       return 'nieznany ruch';
     }
   }
-  function displayResult(argComputerMove, argPlayerMove) {
+   const displayResult = function(argComputerMove, argPlayerMove) {
     // zasady gry co zrobil kazdy z graczy
     if (argComputerMove == 'kamień' && argPlayerMove == 'papier') {
       printMessage('Ty wygrywasz!');
@@ -75,11 +75,11 @@ const playGame = function(playerInput) {
   }
   clearMessages();
   // losowanie zmieniej
-  let randomNumber = Math.floor(Math.random() * 3 + 1);
+  const randomNumber = Math.floor(Math.random() * 3 + 1);
   // console log dla liczby losowej
   console.log('Wylosowana liczba to: ' + randomNumber);
   // nadanie zmienej i przekazywanie jej do funkcji
-  let computerMove = getMoveName(randomNumber);
+  const computerMove = getMoveName(randomNumber);
   /*
   if(randomNumber == 1){
     computerMove = 'kamień';
@@ -101,7 +101,7 @@ const playGame = function(playerInput) {
 
   console.log('Gracz wpisał: ' + playerInput);
   // nadanie zmienej gracza i przekazanie jej do funkcji okreslajacej co wpisal gracz
-  let playerMove = getMoveName(playerInput);
+  const playerMove = getMoveName(playerInput);
   /*
   if(playerInput == 1)  
   {
@@ -121,6 +121,6 @@ const playGame = function(playerInput) {
 
   printMessage('Twój ruch to: ' + playerMove);
   // okreslenie zmienej dla funckji
-  let result = displayResult(computerMove, playerMove);
+  const result = displayResult(computerMove, playerMove);
   // dlaczego wyswietla mi sie wynik jezeli tylko okreslilem zmiena
 }
