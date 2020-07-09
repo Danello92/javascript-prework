@@ -1,6 +1,3 @@
-
-
-
  const buttonClickedPaper = function(){
   let playerInput = 2;
   playGame(playerInput);
@@ -24,53 +21,59 @@ rButton.addEventListener('click', buttonClickedRock);
 sButton.addEventListener('click', buttonClickedScissors);
 
 const playGame = function(playerInput) {
-
+ 
+    const paper = 'papier';   
+    const scissors  = 'nożyce';   
+    const rock = 'kamień';   
+    const errorMove = 'nieznany ruch';
+    const drawMove = 'remis';
+    
     const clearMessages = function(){
     document.getElementById('messages').innerHTML = '';
-  }
-   const getMoveName = function (argMoveId) {
+    }
+    const getMoveName = function (argMoveId){
     // okreslanie co zostało wybrane przez gracza jak i komputer
     if (argMoveId == 1) {
-      return 'kamień';
+      return rock;
     }
     if (argMoveId == 2) {
-      return 'papier';
+      return paper;
     }
     if (argMoveId == 3) {
-      return 'nożyce';
+      return scissors;
     }
     else {
       // nieznany ruch dla gry
       printMessage('Nie znam ruchu' + argMoveId + '.');
-      return 'nieznany ruch';
+      return errorMove;
     }
   }
    const displayResult = function(argComputerMove, argPlayerMove) {
     // zasady gry co zrobil kazdy z graczy
-    if (argComputerMove == 'kamień' && argPlayerMove == 'papier') {
+    if (argComputerMove == rock && argPlayerMove == paper) {
       printMessage('Ty wygrywasz!');
     }
-    if (argComputerMove == 'papier' && argPlayerMove == 'nożyce') {
+    if (argComputerMove == paper && argPlayerMove == scissors) {
       printMessage('Ty wygrywasz!');
     }
-    if (argComputerMove == 'nożyce' && argPlayerMove == 'kamień') {
+    if (argComputerMove == scissors && argPlayerMove == rock) {
       printMessage('Ty wygrywasz!');
     }
-    if (argComputerMove == 'kamień' && argPlayerMove == 'nożyce') {
+    if (argComputerMove == rock && argPlayerMove == scissors) {
       printMessage('Ty przegrywasz!');
     }
-    if (argComputerMove == 'nożyce' && argPlayerMove == 'papier') {
+    if (argComputerMove == scissors && argPlayerMove == scissors) {
       printMessage('Ty przegrywasz!');
     }
-    if (argComputerMove == 'papier' && argPlayerMove == 'kamień') {
+    if (argComputerMove == paper && argPlayerMove == rock) {
       printMessage('Ty przegrywasz!');
       // nie moznosc wykonania zasady error kodu
-    } if (argPlayerMove == 'nieznany ruch') {
+    } if (argPlayerMove == errorMove) {
       printMessage('nie dozwolony ruch');
     }
     // mozliwosc remisu
     if (argComputerMove == argPlayerMove) {
-      printMessage('remis');
+      printMessage(drawMove);
     }
   }
   clearMessages();
